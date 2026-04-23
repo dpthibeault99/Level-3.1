@@ -75,7 +75,7 @@ class Ball {
             this.y = canvas.height / 2;
             this.color = "#3700ff";
         }
-s
+
         // BOTTOM WALL
         if (this.y + this.radius > this.canvas.height) {
             this.y = this.canvas.height - this.radius;

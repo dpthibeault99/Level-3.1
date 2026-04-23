@@ -39,12 +39,12 @@ function animate()
                 player.y += 4;
         }
         //player 2
-        if (38)
+        if (up)
         {
                 player2.y -= 4;
         }
 
-        if (40)
+        if (down)
         {
                 player2.y += 4;
         }
@@ -113,4 +113,15 @@ function boundry()
     {
         player.y = player.height / 2;
     }
+
+    if (player2.y > canvas.height - player2.height / 2)
+        {
+        player2.y = canvas.height - player2.height / 2;
+        }
+
+        if (player2.y < player2.height / 2)
+        {
+        player2.y = player2.height / 2;
+        }
+
 }
