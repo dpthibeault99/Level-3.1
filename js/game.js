@@ -73,16 +73,23 @@ function animate()
                         ball.speedY = 0;
                 }
 
-                //player 2
-                if (ball.y > player2.y - (player2.height / 6))
-                {
-                        ball.speedX = -5;
-                        ball.speedY = 5;
-                }
-                else if (ball.y < player2.y + (player2.height / 6))
+                
+        }
+
+        if (ball.collisionCheck(player2))
+        {
+                ball.x = player2.left() - ball.radius;
+                ball.color = "#615316";
+
+                if (ball.y < player2.y - (player2.height / 6))
                 {
                         ball.speedX = -5;
                         ball.speedY = -5;
+                }
+                else if (ball.y > player2.y + (player2.height / 6))
+                {
+                        ball.speedX = -5;
+                        ball.speedY = 5;
                 }
                 else
                 {
@@ -90,6 +97,7 @@ function animate()
                         ball.speedY = 0;
                 }
         }
+
 
         player.drawRect();
         player.move();
