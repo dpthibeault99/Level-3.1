@@ -7,11 +7,6 @@ var right = false;
 var up = false;
 var down = false;
 
-// Up Arrow = 38
-// Down Arrow = 40
-// Left Arrow = 37
-// Right Arrow = 39
-
 document.addEventListener("keydown", press);
 document.addEventListener("keyup", release);
 

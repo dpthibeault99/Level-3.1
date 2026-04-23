@@ -10,7 +10,7 @@ canvas = document.getElementById("myCanvas");
 context = canvas.getContext("2d");
 
 // the paddle 
-//                          (x, y, w, h, color)
+//---------------------(x, y, w, h, color)
 player = new gameObject(10, 400 , 30, 150, "#ff00f2");
 player.vx = 0;
 player.vy = 0;
@@ -56,6 +56,7 @@ function animate()
                 ball.x = player.right() + ball.radius;
                 ball.color = "#615316";
 
+                //player 1
                 if (ball.y < player.y - (player.height / 6))
                 {
                         ball.speedX = 5;
@@ -69,6 +70,23 @@ function animate()
                 else
                 {
                         ball.speedX = 5;
+                        ball.speedY = 0;
+                }
+
+                //player 2
+                if (ball.y > player2.y - (player2.height / 6))
+                {
+                        ball.speedX = -5;
+                        ball.speedY = 5;
+                }
+                else if (ball.y < player2.y + (player2.height / 6))
+                {
+                        ball.speedX = -5;
+                        ball.speedY = -5;
+                }
+                else
+                {
+                        ball.speedX = -5;
                         ball.speedY = 0;
                 }
         }
